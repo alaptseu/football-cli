@@ -1,3 +1,34 @@
-{
-  "API_KEY": ""
-}
+[
+  {
+    "CLIENT_ID": "",
+    "USERNAME": "",
+    "PASSWORD": "",
+    "SCOPE": "",
+    "CLIENT_SECRET": "",
+    "GRANT_TYPE": ""
+  },
+  {
+    "CLIENT_ID": "",
+    "USERNAME": "",
+    "PASSWORD": "",
+    "SCOPE": "",
+    "CLIENT_SECRET": "",
+    "GRANT_TYPE": ""
+  },
+  {
+    "CLIENT_ID": "",
+    "USERNAME": "",
+    "PASSWORD": "",
+    "SCOPE": "",
+    "CLIENT_SECRET": "",
+    "GRANT_TYPE": ""
+  },
+  {
+    "CLIENT_ID": "",
+    "USERNAME": "",
+    "PASSWORD": "",
+    "SCOPE": "",
+    "CLIENT_SECRET": "",
+    "GRANT_TYPE": ""
+  }
+]

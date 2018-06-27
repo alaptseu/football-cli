@@ -260,15 +260,52 @@ const argv = yargs
 
     const questions = [{
       type: 'input',
-      name: 'API_KEY',
-      message: 'Enter API KEY <leave blank in case unchanged>',
+      name: 'CLIENT_ID',
+      message: 'Enter CLIENT_ID <leave blank in case unchanged>',
+    },
+    {
+      type: 'input',
+      name: 'USERNAME',
+      message: 'Enter USERNAME <leave blank in case unchanged>',
+    },
+    {
+      type: 'input',
+      name: 'PASSWORD',
+      message: 'Enter PASSWORD <leave blank in case unchanged>',
+    },
+    {
+      type: 'input',
+      name: 'SCOPE',
+      message: 'Enter SCOPE <leave blank in case unchanged>',
+    },
+    {
+      type: 'input',
+      name: 'CLIENT_SECRET',
+      message: 'Enter CLIENT_SECRET <leave blank in case unchanged>',
+    },
+    {
+      type: 'input',
+      name: 'GRANT_TYPE',
+      message: 'Enter GRANT_TYPE <leave blank in case unchanged>',
     }];
 
     inquirer.prompt(questions).then((answers) => {
       const obj = config;
-
-      if (answers.API_KEY !== '') {
-        obj.API_KEY = answers.API_KEY;
+      console.log(obj);
+      const emp = obj.filter(ob => ob.CLIENT_ID === '')[0];
+      console.log('first', emp);
+      if (answers.CLIENT_ID !== '') {
+        obj.CLIENT_ID = answers.CLIENT_ID;
+      } else if (answers.USERNAME !== '') {
+        obj.USERNAME = answers.USERNAME;
+      } else if (answers.PASSWORD !== '') {
+        obj.PASSWORD = answers.PASSWORD;
+      } else if (answers.SCOPE !== '') {
+        obj.SCOPE = answers.SCOPE;
+      } else if (answers.CLIENT_SECRET !== '') {
+        obj.CLIENT_SECRET = answers.CLIENT_SECRET;
+      } else if (answers.GRANT_TYPE !== '') {
+        obj.GRANT_TYPE = answers.GRANT_TYPE;
       }
 
       fs.writeFileSync(path.resolve(__dirname, 'config.json'), JSON.stringify(obj, null, 2), 'utf8');
